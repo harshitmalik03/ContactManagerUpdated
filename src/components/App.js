@@ -6,10 +6,8 @@ import AddContact from './AddContact';
 import ContactList from './ContactList';
 // import { v4 as uuid } from 'react-uuid';
 import { v4 as uuid } from 'uuid';
-import Testing from './Testing';
 import ContactDetails from './ContactDetails';
 import "./styles.css";
-import { Button } from '@mui/material';
 
 function App() {
   const LOCAL_STORAGE_KEY = "Contacts";
@@ -54,6 +52,8 @@ function App() {
         </div>
         <div className='routes-container content-container'>
           <Routes>
+            {/* <Route path='/' element={<App/>} /> */}
+            <Route exact path = '/main' element = {<App/>} />
             <Route path='/contactdetails/:id' element={<ContactDetails />} />
             <Route path='/addcontacts' element={<AddContact addContactHandler={addContactHandler} />} />
             <Route path='/contactlist' element={<ContactList Contacts={Contacts} getContactId={removeContactHandler} />} />
